@@ -5,10 +5,11 @@ from bs4 import BeautifulSoup
 #from urllib.request import urlopen as uReq
 import logging
 import pymongo
-logging.basicConfig(filename="logger.log" , level=logging.INFO)
+logging.basicConfig(filename="scrapper.log" , level=logging.INFO)
 import os
 
-app = Flask(__name__)
+application = Flask(__name__)
+app = application
 
 @app.route("/", methods = ['GET'])
 def homepage():
@@ -73,5 +74,5 @@ def index():
 
 
 if __name__ == "__main__":
-      app.run(debug=True)
-    #app.run(host="0.0.0.0",port=8000)
+      #app.run(debug=True)
+      app.run(host="0.0.0.0",port=8000)
